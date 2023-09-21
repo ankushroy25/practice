@@ -24,6 +24,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
+const corsOptions = {
+  origin: "https://vote-easy.onrender.com",
+  methods: "GET, POST, PUT, DELETE",
+  optionsSuccessStatus: 204,
+};
+
+// Enable CORS with specific urls
+app.use(cors(corsOptions));
 
 // DATABASE CONNECTION
 connection();
@@ -50,15 +58,6 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
-
-const corsOptions = {
-  origin: "https://vote-easy.onrender.com",
-  methods: "GET, POST, PUT, DELETE",
-  optionsSuccessStatus: 204,
-};
-
-// Enable CORS with specific urls
-app.use(cors(corsOptions));
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`.bgBlue.white);
