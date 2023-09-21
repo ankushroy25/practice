@@ -12,7 +12,9 @@ const ProtectedRoutes = ({ admin, superAdmin }) => {
   useEffect(() => {
     const fetchToken = async () => {
       try {
-        const { data } = await axios.get("/api/get-token");
+        const { data } = await axios.get(
+          "https://voteeasy-backend.onrender.com/api/get-token"
+        );
         if (data.token && sessionStorage.getItem("user")) {
           setIsAuth(true);
           setIsAdmin(data.isAdmin);

@@ -16,7 +16,7 @@ const Profile = () => {
     const getProfile = async () => {
       try {
         const response = await axios.get(
-          `/api/users/get-profile/${userDetails._id}`
+          `https://voteeasy-backend.onrender.com/api/users/get-profile/${userDetails._id}`
         );
         if (response.data) {
           setUser(response.data);
@@ -84,7 +84,7 @@ const Profile = () => {
       .then(async (data) => {
         try {
           const response = await axios.post(
-            `/api/users/upload/${userDetails._id}`,
+            `https://voteeasy-backend.onrender.com/api/users/upload/${userDetails._id}`,
             data
           );
 
@@ -213,17 +213,16 @@ const Profile = () => {
       </div>
       {image && (
         <div className="flex justify-center mt-4">
-        <button
-  onClick={() => {
-    setSubmit(true);
-    handleSetAsProfilePicture();
-  }}
-  disabled={submit}
-  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
->
-  Set as Profile Picture
-</button>
-
+          <button
+            onClick={() => {
+              setSubmit(true);
+              handleSetAsProfilePicture();
+            }}
+            disabled={submit}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            Set as Profile Picture
+          </button>
         </div>
       )}
     </Layout>
