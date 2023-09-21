@@ -7,38 +7,36 @@ import VerifyPage from "./page/Verify";
 import Vote from "./page/Vote.jsx";
 import Guide from "./page/Guide.jsx";
 import Profile from "./page/Profile.jsx";
-import axios from "axios";
 import Results from "./page/Results.jsx";
 import ProtectedRoutes from "./component/ProtectedRoutes.js";
 import SuperAdmin from "./page/SuperAdmin.jsx";
 import ZoneAdminHome from "./page/ZoneAdminHome.jsx";
 import ZoneAdminVerify from "./page/ZoneAdminVerify.jsx";
 import ZoneAdminVote from "./page/ZoneAdminVote.jsx";
-import { useEffect } from "react";
 const App = () => {
-//   const refreshAccessToken = async () => {
-//     try {
-//       const response = await axios.get("/api/users/refresh-token");
-//       if (response.status === 403 || response.status === 401) return;
-//       if (response.data) console.log(response.data.message + " hi ");
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+  //   const refreshAccessToken = async () => {
+  //     try {
+  //       const response = await axios.get("/api/users/refresh-token");
+  //       if (response.status === 403 || response.status === 401) return;
+  //       if (response.data) console.log(response.data.message + " hi ");
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-//   const refreshInterval = 19 * 60 * 1000 + 50 * 1000;
+  //   const refreshInterval = 19 * 60 * 1000 + 50 * 1000;
 
-//   useEffect(() => {
-//     if (sessionStorage.getItem("user")) {
-//       refreshAccessToken();
+  //   useEffect(() => {
+  //     if (sessionStorage.getItem("user")) {
+  //       refreshAccessToken();
 
-//       const intervalId = setInterval(refreshAccessToken, refreshInterval);
+  //       const intervalId = setInterval(refreshAccessToken, refreshInterval);
 
-//       return () => {
-//         clearInterval(intervalId);
-//       };
-//     }
-//   }, []);
+  //       return () => {
+  //         clearInterval(intervalId);
+  //       };
+  //     }
+  //   }, []);
 
   return (
     <Routes>
